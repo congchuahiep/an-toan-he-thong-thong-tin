@@ -21,10 +21,12 @@
 
    <body>
       <section class="container forms">
-         <div class="form login">
+         <!-- Signup Form -->
+
+         <div class="form">
             <div class="form-content">
-               <header>Đăng nhập</header>
-               <form method="post" action="/login">
+               <header>Đăng ký</header>
+               <form method="post" action="/signup">
                   <div class="field input-field">
                      <input
                         type="username"
@@ -38,35 +40,40 @@
                      <input
                         type="password"
                         name="password"
-                        placeholder="Mật khẩu"
+                        placeholder="Tạo mật khẩu"
                         class="password"
                      />
-                     <i class="bx bx-hide eye-icon">👁️</i>
                   </div>
 
-                  <div class="form-link">
-                     <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+                  <div class="field input-field">
+                     <input
+                        type="password"
+                        placeholder="Nhập lại mật khẩu"
+                        class="password"
+                     />
+                     <i class="bx bx-hide eye-icon"></i>
                   </div>
 
                   {% with messages =
-                  get_flashed_messages(with_categories=True)%} {% if messages %}
-                  {% for category, message in messages %}
-                  <div class="{{ category }}">{{ message }}</div>
-                  {% endfor %} {% endif %} {% endwith %}
+                     get_flashed_messages(with_categories=True)%} {% if messages %}
+                     {% for category, message in messages %}
+                     <div class="{{ category }}">{{ message }}</div>
+                     {% endfor %} {% endif %} {% endwith %}
 
                   <div class="field button-field">
-                     <button type="submit">Đăng nhập</button>
+                     <button>Đăng ký</button>
                   </div>
                </form>
 
                <div class="form-link">
                   <span
-                     >Chưa có tài khoản?
-                     <a href="#" class="link signup-link">Đăng ký</a></span
+                     >Đã có tài khoản?
+                     <a href="#" class="link login-link">Đăng nhập</a></span
                   >
                </div>
             </div>
          </div>
+      </section>
 
       <!-- JavaScript -->
       <script src="{{ url_for('static', filename='js/login.js') }}"></script>
