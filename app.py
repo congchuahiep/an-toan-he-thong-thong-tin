@@ -29,7 +29,6 @@ def login():
             # Khi kiểm tra thành công, thêm người dùng vào Session của hệ thống
             session['user_id'] = user.id
             session['username'] = user.username
-            flash('Đăng nhập thành công!', 'success')
             return redirect(url_for('home'))
         else:
             flash('Tài khoản hoặc mật khẩu không hợp lệ', 'danger')
@@ -60,3 +59,10 @@ def signup():
         return redirect(url_for('login'))
     
     return render_template('signup.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    session.pop('username', None)
+    flash('Bạn đã đăng xuất', 'info')
+    return redirect(url_for('login'))

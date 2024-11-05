@@ -26,6 +26,12 @@
          <div class="form">
             <div class="form-content">
                <header>Đăng ký</header>
+
+               {% with messages = get_flashed_messages(with_categories=True)%}
+               {% if messages %} {% for category, message in messages %}
+               <div class="{{ category }}">{{ message }}</div>
+               {% endfor %} {% endif %} {% endwith %}
+
                <form method="post" action="/signup">
                   <div class="field input-field">
                      <input
@@ -54,12 +60,6 @@
                      <i class="bx bx-hide eye-icon"></i>
                   </div>
 
-                  {% with messages =
-                     get_flashed_messages(with_categories=True)%} {% if messages %}
-                     {% for category, message in messages %}
-                     <div class="{{ category }}">{{ message }}</div>
-                     {% endfor %} {% endif %} {% endwith %}
-
                   <div class="field button-field">
                      <button>Đăng ký</button>
                   </div>
@@ -68,7 +68,9 @@
                <div class="form-link">
                   <span
                      >Đã có tài khoản?
-                     <a href="/login" class="link login-link">Đăng nhập</a></span
+                     <a href="/login" class="link login-link"
+                        >Đăng nhập</a
+                     ></span
                   >
                </div>
             </div>

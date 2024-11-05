@@ -51,3 +51,21 @@ a:hover {
    padding-right: 5px;
    width: 20%;
 }
+
+.success {
+   color: green;
+   text-align: center;
+   margin: 24px;
+}
+
+.danger {
+   color: red;
+   text-align: center;
+   margin: 24px;
+}
+
+.info {
+   color: darkblue;
+   text-align: center;
+   margin: 24px;
+}

@@ -159,9 +159,14 @@
                      </li>
                      {% if user %}
                      <li
+                        class="hearder__navbar-item hearder__navbar-item--strong hearder__navbar-item--phancach"
+                     >
+                        Chào mừng {{ user }}
+                     </li>
+                     <li
                         class="hearder__navbar-item hearder__navbar-item--strong"
                      >
-                        Chào mừng {{user}}
+                        <a href="/logout">Đăng xuất</a>
                      </li>
                      {% else %}
 
