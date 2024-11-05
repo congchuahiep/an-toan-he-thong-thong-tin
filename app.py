@@ -10,12 +10,37 @@ bcrypt = Bcrypt(app)
 
 @app.route('/')
 def home():
-    if 'username' in session:
-        return render_template('index.html', user=session['username'])
-    return render_template('index.html')
+    return render_template('index.html', user=session.get('username'))
+
+@app.route('/intro')
+def intro():
+    return render_template('intro.html', user=session.get('username'))
+
+@app.route('/achivement')
+def achivement():
+    return render_template('achivement.html', user=session.get('username'))
+
+@app.route('/schedule')
+def schedule():
+    return render_template('schedule.html', user=session.get('username'))
+
+@app.route('/it')
+def it():
+    return render_template('it.html', user=session.get('username'))
+
+@app.route('/courses')
+def courses():
+    # Kiểm tra xem người dùng đã đăng nhập chưa
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    
+    # Lấy danh sách khoá học của người dùng từ database
+    user_courses = get_user_courses(session['username'])
+    
+    return render_template('courses.html', user=session.get('username'), user_courses=user_courses)
 
 @app.route('/login', methods=['GET', 'POST'])
-def login():    
+def login():
     if request.method == 'POST':
         from models import User
         # Lấy tên username và password từ form
@@ -66,3 +91,8 @@ def logout():
     session.pop('username', None)
     flash('Bạn đã đăng xuất', 'info')
     return redirect(url_for('login'))
+
+def get_user_courses(username):
+    # Lấy danh sách khoá học của người dùng từ database
+    # ...
+    return {}

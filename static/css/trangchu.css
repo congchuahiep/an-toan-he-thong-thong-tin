@@ -1,7 +1,7 @@
 /* -------------Header----------- */
 .header {
     display: block;
-    background-image: linear-gradient(0, #4070f4, #4070f4);
+    background-image: linear-gradient(0, rgb(70, 104, 167), rgb(70, 104, 167));
     height: var(--header-height);
 }
 
@@ -231,6 +231,8 @@
 .header__menu {
     display: flex;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__menu-selection {
@@ -250,6 +252,27 @@
     text-align: center;
     border-radius: 20px;
 }
+
+.reallybig {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+    background-color: #ef4444;
+    margin: 0 10px;
+    width: 150px;
+    line-height: 52px;
+    text-align: center;
+    border-radius: 8px;
+}
+.reallybig:hover {
+    color: white;
+    background-color: #991b1b;
+}
+.what:hover {
+    color: white;
+}
+
 /* Lựa chọn khóa học */
 .sub-menu {
     position: absolute;

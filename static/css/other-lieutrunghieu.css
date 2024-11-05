@@ -1,0 +1,105 @@
+.languages{
+    background-color: rgb(70, 104, 167);
+    margin-top: 10px;
+
+}
+.lang{
+    display: flex;
+    padding: 0;
+    border-bottom: 1px solid whitesmoke;
+}
+.phai{
+    width: 28%;  
+    margin-right: 170px;
+}
+.trai{
+    margin: auto;
+    line-height: 26px;
+    font-size: 18px;
+    color: aliceblue;
+    width: 45%;
+}
+.languages img{
+    width: 100%;
+    transition: transform .5s;
+}
+
+
+
+.cata{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.cata1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border: 1px solid rgb(9, 8, 8);
+    height: 40px;
+    background-color: rgb(66, 106, 179);
+    color: aliceblue;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.cata .a1{
+    width: 18%;
+    padding: auto;
+}
+.cata2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+.cata a{
+    text-decoration: none;
+    background-color: aquamarine;
+    height: 10px;
+    width: 10px;;
+    border-radius: 10px;
+}
+.cata3{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(216, 225, 232);
+    margin-top: 20px;
+    align-items: center;
+    text-decoration: none;
+    height: 80px;
+}
+.cata4{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    align-items: center;
+}
+.cata5{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(216, 225, 232);
+    align-items: center;
+    height: 50px;
+    margin-top: 20px;
+}
+.cata6{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.cata7{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(216, 225, 232);
+    margin-top: 20px;
+    height: 80px;
+}
+.cata8{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    height: 80px;
+}

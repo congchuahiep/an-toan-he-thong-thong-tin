@@ -1,532 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Reset css -->
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+{% extends "layout.html" %} {% block body %}
+<!-- Liên kết trang   -->
+
+<!-- Giới thiệu -->
+<div class="batdau__trangchu">
+   <h1 class="start__trangchu-tieude">
+      Chào Mừng Đến Với <span>Language & IT Academy!</span>
+   </h1>
+   <p class="start__trangchu-noidung">
+      Language & IT Academy là một trong những trung tâm đào tạo ngoại ngữ và
+      tin học uy tín hàng đầu tại Việt Nam. Với sứ mệnh trang bị cho học viên
+      những kiến thức và kỹ năng cần thiết để thành công trong thời đại số,
+      Language & IT Academy đã không ngừng đổi mới và nâng cao chất lượng đào
+      tạo. Trung tâm cung cấp đa dạng các khóa học tiếng Anh và lập trình, từ cơ
+      bản đến nâng cao, phù hợp với mọi đối tượng học viên. Đặc biệt, phương
+      pháp học kết hợp trực tuyến và offline giúp học viên chủ động trong việc
+      học tập và tiết kiệm thời gian. Với đội ngũ giáo viên giàu kinh nghiệm và
+      nhiệt huyết, cùng cơ sở vật chất hiện đại, Language & IT Academy cam kết
+      mang đến cho học viên những trải nghiệm học tập tốt nhất.
+   </p>
+   <div class="hinhtrungtam">
+      <img
+         src="{{ url_for('static', filename='img/hinhanhtrungtam.jpg')}}"
+         alt="Hinhtrungtam"
+         class="hinhtrungtam-item"
       />
-      <!-- Nhúng liên kết Icon -->
-      <link
-         rel="stylesheet"
-         href="./assets/fonts/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css"
+      <img
+         src="{{ url_for('static', filename='img/hinhanhtrungtam2.jpg')}}"
+         alt="Hinhtrungtam"
+         class="hinhtrungtam-item"
       />
-      <link
-         rel="stylesheet"
-         href="{{ url_for('static', filename='fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css') }}"
+      <img
+         src="{{ url_for('static', filename='img/hinhanhtrungtam4.jpg')}}"
+         alt="Hinhtrungtam"
+         class="hinhtrungtam-item"
       />
-      <!-- Lien ket css -->
-      <link
-         rel="stylesheet"
-         href="{{ url_for('static', filename='css/global.css') }}"
-      />
-      <link
-         rel="stylesheet"
-         href="{{ url_for('static', filename='css/trangchu.css') }}"
-      />
-
-      <title>Language & IT Academy</title>
-   </head>
-
-   <body>
-      <div class="wrapper">
-         <!-- Header -->
-         <div class="header">
-            <div class="grid">
-               <!-- Navbar - Thông báo - Đăng ký - Đăng nhập -->
-               <nav class="header__navbar">
-                  <!-- Tên Trung Tâm -->
-                  <ul class="hearder__navbar-list">
-                     <li class="hearder__navbar-item">
-                        <span class="header__navba-title--no-pointer"
-                           ><i
-                              class="header__navbar-icon fa-solid fa-school-flag"
-                           ></i>
-                           TRUNG TÂM NGOẠI NGỮ - TIN HỌC LANGUAGE & IT
-                           ACADEMY</span
-                        >
-                     </li>
-                  </ul>
-                  <ul class="hearder__navbar-list">
-                     <!-- Thông báo -->
-                     <li
-                        class="hearder__navbar-item hearder__navbar-item--has-notify"
-                     >
-                        <a href="" class="hearder__navbar-item-link">
-                           <i class="fa-regular fa-bell"></i>
-                           Thông báo
-                        </a>
-                        <!-- Ẩn hiện - Danh sách -->
-                        <div class="header__notify">
-                           <header class="header__notify-header">
-                              <h3>Thông báo mới nhận</h3>
-                           </header>
-                           <ul class="header__notify-list">
-                              <!-- 1 -->
-                              <li
-                                 class="header__notify-item header__notify-item--viewed"
-                              >
-                                 <a href="" class="header__notify-link">
-                                    <img
-                                       src="{{ url_for('static', filename='img/TOEIC Giao tiep.png')}}"
-                                       alt="Toeic giao tiếp"
-                                       class="header__notify-img"
-                                    />
-                                    <div class="header__notify-info">
-                                       <span class="header__notify-name"
-                                          >Khoá học TOEIC Giao tiếp giảm giá
-                                          50%</span
-                                       >
-                                       <span class="header__notify-description"
-                                          >Mục tiêu 500+ hoặc 600+ trong thời
-                                          gian ngắn</span
-                                       >
-                                    </div>
-                                 </a>
-                              </li>
-                              <!-- 2 -->
-                              <li
-                                 class="header__notify-item header__notify-item--viewed"
-                              >
-                                 <a href="" class="header__notify-link">
-                                    <img
-                                       src="{{ url_for('static', filename='img/thiet ke do hoa.jpg')}}"
-                                       alt="Toeic giao tiếp"
-                                       class="header__notify-img"
-                                    />
-                                    <div class="header__notify-info">
-                                       <span class="header__notify-name"
-                                          >Khóa học đồ họa Graphic Design &
-                                          Interactive Media ưu đãi 30%
-                                       </span>
-                                       <span class="header__notify-description"
-                                          >Thiết kế từ cơ bản đến nâng cao</span
-                                       >
-                                    </div>
-                                 </a>
-                              </li>
-                              <!-- 3 -->
-                              <li class="header__notify-item">
-                                 <a href="" class="header__notify-link">
-                                    <img
-                                       src="{{ url_for('static', filename='img/IELTS.jpg')}}"
-                                       alt="Toeic giao tiếp"
-                                       class="header__notify-img"
-                                    />
-                                    <div class="header__notify-info">
-                                       <span class="header__notify-name"
-                                          >Khóa học IELTS MASTER Lộ trình nhanh
-                                          chóng</span
-                                       >
-                                       <span class="header__notify-description"
-                                          >Đầu vào 6.5 IELTS và có mục tiêu đầu
-                                          ra 7.5 IELTS</span
-                                       >
-                                    </div>
-                                 </a>
-                              </li>
-                              <!-- 4 -->
-                              <li class="header__notify-item">
-                                 <a href="" class="header__notify-link">
-                                    <img
-                                       src="{{ url_for('static', filename='img/TOEIC 4 ky nang.jpg')}}"
-                                       alt="Toeic giao tiếp"
-                                       class="header__notify-img"
-                                    />
-                                    <div class="header__notify-info">
-                                       <span class="header__notify-name"
-                                          >TOEIC 4 Kỹ Năng ưu đãi học phí 5
-                                          triệu</span
-                                       >
-                                       <span class="header__notify-description"
-                                          >Thời gian diễn ra ưu đãi 01/9/2024 -
-                                          01/10/2024</span
-                                       >
-                                    </div>
-                                 </a>
-                              </li>
-                           </ul>
-
-                           <!-- Xem tất cả -->
-                           <footer class="header__notify-footer">
-                              <a href="" class="header__notify-footer-btn"
-                                 >Xem tất cả</a
-                              >
-                           </footer>
-                        </div>
-                     </li>
-                     {% if user %}
-                     <li
-                        class="hearder__navbar-item hearder__navbar-item--strong hearder__navbar-item--phancach"
-                     >
-                        Chào mừng {{ user }}
-                     </li>
-                     <li
-                        class="hearder__navbar-item hearder__navbar-item--strong"
-                     >
-                        <a href="/logout">Đăng xuất</a>
-                     </li>
-                     {% else %}
-
-                     <!-- Đăng ký -->
-                     <li
-                        class="hearder__navbar-item hearder__navbar-item--strong hearder__navbar-item--phancach"
-                     >
-                        <a href="/login"> Đăng ký </a>
-                     </li>
-                     <!-- Đăng nhập -->
-                     <li
-                        class="hearder__navbar-item hearder__navbar-item--strong"
-                     >
-                        <a href="/login"> Đăng nhập </a>
-                     </li>
-                     {% endif %}
-                  </ul>
-               </nav>
-               <!-- Logo - Menu -->
-               <div class="header-logo-menu">
-                  <div class="header__logo">
-                     <img
-                        class="header__logo-img"
-                        src="./assets/Img/Logo - Da tach nen.png"
-                        alt="Logo trung tâm"
-                     />
-                  </div>
-                  <div class="header__menu">
-                     <li class="header__menu-selection">
-                        <a href="trangchu.html" target="loadpage">TRANG CHỦ</a>
-                     </li>
-                     <li class="header__menu-selection">
-                        <a href="gioithieu.html">GIỚI THIỆU</a>
-                     </li>
-                     <li
-                        class="header__menu-selection header__menu-selection-has-checked"
-                     >
-                        <a href="">KHÓA HỌC</a>
-                        <ul class="sub-menu">
-                           <li class="header__menu-selection">
-                              <a href="">TOEIC Giao tiếp</a>
-                           </li>
-                           <li class="header__menu-selection">
-                              <a href="">TOEIC 4 Kỹ Năng</a>
-                           </li>
-                           <li class="header__menu-selection">
-                              <a href="">Tin học văn phòng</a>
-                           </li>
-                           <li class="header__menu-selection">
-                              <a href="">Thiết kế đồ họa</a>
-                           </li>
-                        </ul>
-                     </li>
-                     <li class="header__menu-selection">
-                        <a href="">LỊCH KHAI GIẢNG</a>
-                     </li>
-                     <li class="header__menu-selection">
-                        <a href="">THÀNH TÍCH</a>
-                     </li>
-                     <li class="header__menu-selection">
-                        <a href="">LIÊN HỆ</a>
-                     </li>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- container -->
-         <div class="container">
-            <div class="grid">
-               <!-- Liên kết trang   -->
-
-               <!-- Giới thiệu -->
-               <div class="batdau__trangchu">
-                  <h1 class="start__trangchu-tieude">
-                     Chào Mừng Đến Với <span>Language & IT Academy!</span>
-                  </h1>
-                  <p class="start__trangchu-noidung">
-                     Language & IT Academy là một trong những trung tâm đào tạo
-                     ngoại ngữ và tin học uy tín hàng đầu tại Việt Nam. Với sứ
-                     mệnh trang bị cho học viên những kiến thức và kỹ năng cần
-                     thiết để thành công trong thời đại số, Language & IT
-                     Academy đã không ngừng đổi mới và nâng cao chất lượng đào
-                     tạo. Trung tâm cung cấp đa dạng các khóa học tiếng Anh và
-                     lập trình, từ cơ bản đến nâng cao, phù hợp với mọi đối
-                     tượng học viên. Đặc biệt, phương pháp học kết hợp trực
-                     tuyến và offline giúp học viên chủ động trong việc học tập
-                     và tiết kiệm thời gian. Với đội ngũ giáo viên giàu kinh
-                     nghiệm và nhiệt huyết, cùng cơ sở vật chất hiện đại,
-                     Language & IT Academy cam kết mang đến cho học viên những
-                     trải nghiệm học tập tốt nhất.
-                  </p>
-                  <div class="hinhtrungtam">
-                     <img
-                        src="{{ url_for('static', filename='img/hinhanhtrungtam.jpg')}}"
-                        alt="Hinhtrungtam"
-                        class="hinhtrungtam-item"
-                     />
-                     <img
-                        src="{{ url_for('static', filename='img/hinhanhtrungtam2.jpg')}}"
-                        alt="Hinhtrungtam"
-                        class="hinhtrungtam-item"
-                     />
-                     <img
-                        src="{{ url_for('static', filename='img/hinhanhtrungtam4.jpg')}}"
-                        alt="Hinhtrungtam"
-                        class="hinhtrungtam-item"
-                     />
-                  </div>
-               </div>
-               <!-- Khóa học nổi bật-->
-               <div class="khoahocnoibat">
-                  <h3 class="tieude-noidung">TOEIC 4 Kỹ Năng</h3>
-                  <ul class="khoahocnoibat-danhsach">
-                     <li class="noidung">
-                        <b>Mục tiêu:</b> Đầu vào 300-500, đầu ra theo nhu cầu.
-                     </li>
-                     <li class="noidung">
-                        <b>Thời lượng</b> 5 tháng (3 buổi/tuần)
-                     </li>
-                     <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
-                  </ul>
-                  <h3 class="tieude-noidung">IELTS MASTER</h3>
-                  <ul class="khoahocnoibat-danhsach">
-                     <li class="noidung">
-                        <b>Mục tiêu:</b> Đầu vào 6.5, đầu ra 7.5.
-                     </li>
-                     <li class="noidung">
-                        <b>Thời lượng:</b> 2 tháng (3-5 buổi/tuần)
-                     </li>
-                     <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
-                  </ul>
-                  <h3 class="tieude-noidung">Tin Học Văn Phòng</h3>
-                  <ul class="khoahocnoibat-danhsach">
-                     <li class="noidung">
-                        <b>Mục tiêu:</b> Thành thạo Microsoft Word, Excel,
-                        PowerPoint.
-                     </li>
-                     <li class="noidung">
-                        <b>Thời lượng:</b> 2 tháng (2-3 buổi/tuần)
-                     </li>
-                     <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
-                  </ul>
-               </div>
-               <!-- Tại sao chọn -->
-               <div class="taisaochon">
-                  <h3 class="tieude-noidung">Tại Sao Chọn Chúng Tôi?</h3>
-                  <ul class="taisaochon-danhsach">
-                     <li class="noidung">
-                        <span><b>Đội Ngũ Giảng Viên Chuyên Nghiệp: </b></span>
-                        <span
-                           >Với nhiều năm kinh nghiệm giảng dạy và chuyên môn
-                           cao.</span
-                        >
-                     </li>
-                  </ul>
-                  <ul class="taisaochon-danhsach">
-                     <li class="noidung">
-                        <span><b>Phương Pháp Giảng Dạy Tối Ưu: </b></span>
-                        <span
-                           >Được thiết kế để phù hợp với nhu cầu và trình độ của
-                           từng học viên.</span
-                        >
-                     </li>
-                  </ul>
-                  <ul class="taisaochon-danhsach">
-                     <li class="noidung">
-                        <span><b>Cơ Sở Vật Chất Hiện Đại: </b></span>
-                        <span
-                           >Lớp học tiện nghi, trang thiết bị đầy đủ để hỗ trợ
-                           quá trình học tập.</span
-                        >
-                     </li>
-                  </ul>
-               </div>
-               <!-- Liên hệ -->
-               <div class="lienhe">
-                  <h3 class="tieude-noidung">Liên hệ</h3>
-                  <ul class="lienhe__danhsach">
-                     <li class="noidung">
-                        <span><b>Điện thoại: </b></span>
-                        <span>096 123 45 67</span>
-                     </li>
-                     <li class="noidung">
-                        <span><b>Email: </b></span>
-                        <span>trungtamngoaingutinhoc@languageit.com</span>
-                     </li>
-                     <li class="noidung">
-                        <span><b>Địa chỉ: </b></span>
-                        <ul class="diachi__danhsach">
-                           <li class="noidung">
-                              Cơ sở 1: 153 Xô Viêt Nghệ Tĩnh, Phường 17, Quận
-                              Bình Thạnh, Thành phố Hồ Chí Minh
-                           </li>
-                           <li class="noidung">
-                              Cơ sở 2: 370 Nguyễn Kiệm, Phường 3, Quận Gò Vấp,
-                              Thành phố Hồ Chí Minh
-                           </li>
-                        </ul>
-                        <h3>
-                           <i
-                              >Hãy kết nối với chúng tôi và bắt đầu hành trình
-                              học tập của bạn ngay hôm nay!</i
-                           >
-                        </h3>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- footer -->
-      <footer class="footer">
-         <div class="grid">
-            <div class="grid__row">
-               <!-- Theo dõi -->
-               <div class="grid__column-2-4">
-                  <h3 class="footer_heading">
-                     THEO DÕI
-                     <ul class="footer-list">
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              ><i
-                                 class="footer-item__icon fa-brands fa-facebook"
-                              ></i
-                              >Facebook</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              ><i
-                                 class="footer-item__icon fa-brands fa-instagram"
-                              ></i
-                              >Instagram</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              ><i
-                                 class="footer-item__icon fa-brands fa-linkedin"
-                              ></i
-                              >Linkedin</a
-                           >
-                        </li>
-                     </ul>
-                  </h3>
-               </div>
-               <!-- Chăm sóc khách hàng -->
-               <div class="grid__column-2-4">
-                  <h3 class="footer_heading">
-                     CHĂM SÓC KHÁCH HÀNG
-                     <ul class="footer-list">
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Trung tâm trợ giúp</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Hướng dẫn đăng ký khóa học</a
-                           >
-                        </li>
-                     </ul>
-                  </h3>
-               </div>
-               <div class="grid__column-2-4">
-                  <h3 class="footer_heading">
-                     VỀ LANGUAGE & IT ACADEMY
-                     <ul class="footer-list">
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Về Language & IT Academy</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Chính sách thanh toán</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Chính sách bảo mật</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link">Điều khoản</a>
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link">Liên hệ</a>
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Quà tặng học viên</a
-                           >
-                        </li>
-                     </ul>
-                  </h3>
-               </div>
-               <!-- Chương trình học -->
-               <div class="grid__column-2-4">
-                  <h3 class="footer_heading">
-                     CHƯƠNG TRÌNH HỌC
-                     <ul class="footer-list">
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >TOEIC Giao tiếp</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >TOEIC 4 Kỹ Năng</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Tin học văn phòng</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >Thiết kế đồ họa</a
-                           >
-                        </li>
-                     </ul>
-                  </h3>
-               </div>
-               <!-- Cơ sở LANGUAGE & IT ACADEMY -->
-               <div class="grid__column-2-4">
-                  <h3 class="footer_heading">
-                     CƠ SỞ LANGUAGE & IT ACADEMY
-                     <ul class="footer-list">
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >CS1: 153 Xô Viêt Nghệ Tĩnh, Phường 17, Quận Bình
-                              Thạnh, Thành phố Hồ Chí Minh</a
-                           >
-                        </li>
-                        <li class="footer-item">
-                           <a href="" class="footer-item__link"
-                              >CS3: 370 Nguyễn Kiệm, Phường 3, Quận Gò Vấp,
-                              Thành phố Hồ Chí Minh</a
-                           >
-                        </li>
-                     </ul>
-                  </h3>
-               </div>
-            </div>
-         </div>
-         <div class="footer__bottom">
-            <div class="grid_row">
-               <h4 class="footer__text">
-                  <i class="fa-regular fa-copyright"></i> CÔNG TY TNHH LANGUAGE
-                  & IT ACADEMY
-               </h4>
-               <p class="footer__text">
-                  Địa chỉ: 153 Xô Viêt Nghệ Tĩnh, Phường 17, Quận Bình Thạnh,
-                  Thành phố Hồ Chí Minh, Việt Nam
-               </p>
-            </div>
-         </div>
-      </footer>
-   </body>
-</html>
+   </div>
+</div>
+<!-- Khóa học nổi bật-->
+<div class="khoahocnoibat">
+   <h3 class="tieude-noidung">TOEIC 4 Kỹ Năng</h3>
+   <ul class="khoahocnoibat-danhsach">
+      <li class="noidung">
+         <b>Mục tiêu:</b> Đầu vào 300-500, đầu ra theo nhu cầu.
+      </li>
+      <li class="noidung"><b>Thời lượng</b> 5 tháng (3 buổi/tuần)</li>
+      <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
+   </ul>
+   <h3 class="tieude-noidung">IELTS MASTER</h3>
+   <ul class="khoahocnoibat-danhsach">
+      <li class="noidung"><b>Mục tiêu:</b> Đầu vào 6.5, đầu ra 7.5.</li>
+      <li class="noidung"><b>Thời lượng:</b> 2 tháng (3-5 buổi/tuần)</li>
+      <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
+   </ul>
+   <h3 class="tieude-noidung">Tin Học Văn Phòng</h3>
+   <ul class="khoahocnoibat-danhsach">
+      <li class="noidung">
+         <b>Mục tiêu:</b> Thành thạo Microsoft Word, Excel, PowerPoint.
+      </li>
+      <li class="noidung"><b>Thời lượng:</b> 2 tháng (2-3 buổi/tuần)</li>
+      <li class="noidung"><a href="">[Tìm Hiểu Thêm]</a></li>
+   </ul>
+</div>
+<!-- Tại sao chọn -->
+<div class="taisaochon">
+   <h3 class="tieude-noidung">Tại Sao Chọn Chúng Tôi?</h3>
+   <ul class="taisaochon-danhsach">
+      <li class="noidung">
+         <span><b>Đội Ngũ Giảng Viên Chuyên Nghiệp: </b></span>
+         <span>Với nhiều năm kinh nghiệm giảng dạy và chuyên môn cao.</span>
+      </li>
+   </ul>
+   <ul class="taisaochon-danhsach">
+      <li class="noidung">
+         <span><b>Phương Pháp Giảng Dạy Tối Ưu: </b></span>
+         <span
+            >Được thiết kế để phù hợp với nhu cầu và trình độ của từng học
+            viên.</span
+         >
+      </li>
+   </ul>
+   <ul class="taisaochon-danhsach">
+      <li class="noidung">
+         <span><b>Cơ Sở Vật Chất Hiện Đại: </b></span>
+         <span
+            >Lớp học tiện nghi, trang thiết bị đầy đủ để hỗ trợ quá trình học
+            tập.</span
+         >
+      </li>
+   </ul>
+</div>
+<!-- Liên hệ -->
+<div class="lienhe">
+   <h3 class="tieude-noidung">Liên hệ</h3>
+   <ul class="lienhe__danhsach">
+      <li class="noidung">
+         <span><b>Điện thoại: </b></span>
+         <span>096 123 45 67</span>
+      </li>
+      <li class="noidung">
+         <span><b>Email: </b></span>
+         <span>trungtamngoaingutinhoc@languageit.com</span>
+      </li>
+      <li class="noidung">
+         <span><b>Địa chỉ: </b></span>
+         <ul class="diachi__danhsach">
+            <li class="noidung">
+               Cơ sở 1: 153 Xô Viêt Nghệ Tĩnh, Phường 17, Quận Bình Thạnh, Thành
+               phố Hồ Chí Minh
+            </li>
+            <li class="noidung">
+               Cơ sở 2: 370 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, Thành phố Hồ Chí
+               Minh
+            </li>
+         </ul>
+         <h3>
+            <i
+               >Hãy kết nối với chúng tôi và bắt đầu hành trình học tập của bạn
+               ngay hôm nay!</i
+            >
+         </h3>
+      </li>
+   </ul>
+</div>
+{% endblock %}
