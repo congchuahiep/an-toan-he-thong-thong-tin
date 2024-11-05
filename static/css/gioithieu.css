@@ -1,0 +1,28 @@
+.start-tongquan {
+    margin-top: 80px;
+    font-size: 1.6rem;
+
+}
+.start-tieude span {
+    color: var(--primary-color);
+}
+.start-noidung {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    line-height: 30px;
+}
+.tieude {
+    font-size: 1.8rem;
+}
+.noidung {
+    font-size: 1.4rem;
+    line-height: 30px;
+}
+.gioithieu {
+    display: flex;
+    
+}
+.gioithieu-item {
+    margin: 10px 10px 0 0;
+    width: 400px;
+}
