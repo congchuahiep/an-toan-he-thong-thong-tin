@@ -1,7 +1,7 @@
 /* -------------Header----------- */
 .header {
     display: block;
-    background-image: linear-gradient(0, #ffc6c6, #ff0000);
+    background-image: linear-gradient(0, #4070f4, #4070f4);
     height: var(--header-height);
 }
 
