@@ -28,6 +28,18 @@ def schedule():
 def it():
     return render_template('it.html', user=session.get('username'))
 
+@app.route('/graphic')
+def graphic():
+    return render_template('graphic.html', user=session.get('username'))
+
+@app.route('/toeicspeak')
+def toeicspeak():
+    return render_template('toeicspeak.html', user=session.get('username'))
+
+@app.route('/toeicskill')
+def toeicskill():
+    return render_template('toeicskill.html', user=session.get('username'))
+
 @app.route('/courses')
 def courses():
     # Kiểm tra xem người dùng đã đăng nhập chưa
@@ -38,7 +50,7 @@ def courses():
     user_courses = get_user_courses(session['username'])
     
     return render_template('courses.html', user=session.get('username'), user_courses=user_courses)
-
+#đăng nhập ở đây
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -60,6 +72,7 @@ def login():
             return redirect(url_for('login'))
 
     return render_template('login.html')
+#đăng kí ở đây
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -68,13 +81,14 @@ def signup():
         # Lấy tên username và password từ form
         username = request.form['username']
         password = request.form['password']
-        # Băm mật khẩu ra
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         # Kiểm tra xem người dùng đã tồn tại chưa
         if User.query.filter_by(username=username).first():
             flash('Tên người dùng đã tồn tại', 'warning')
             return redirect(url_for('signup'))
+
+        # Băm mật khẩu ra
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         # Tạo tài khoản mới và thêm vào database
         new_user = User(username=username, password=hashed_password)
@@ -96,3 +110,4 @@ def get_user_courses(username):
     # Lấy danh sách khoá học của người dùng từ database
     # ...
     return {}
+
